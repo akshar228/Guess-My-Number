@@ -37,10 +37,12 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guess !== secretNumber) {
     if (score > 1) {
       displayMessage(guess > secretNumber ? '📈 Too High!' : '📉 Too Low!');
+      document.querySelector('.guess').value = ' ';
       score--;
       updateScore(score);
     } else {
       displayMessage('😟 You Lost the Game!');
+      document.querySelector('.guess').value = ' ';
       updateScore(0);
     }
   }
