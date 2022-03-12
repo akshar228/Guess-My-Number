@@ -1,6 +1,6 @@
 'use strict';
 
-let secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 100) + 1;
 let score = 20;
 let highScore = 0;
 
@@ -19,8 +19,8 @@ document.querySelector('.check').addEventListener('click', function () {
     displayMessage('⛔ NO number!');
 
     //when input is not between 1 and 20
-  } else if (guess <= 0 || guess > 20) {
-    displayMessage('Pick between 1 And 20');
+  } else if (guess <= 0 || guess > 100) {
+    displayMessage('Pick between 1 And 100');
 
     //when player wins
   } else if (guess === secretNumber) {
@@ -49,7 +49,7 @@ document.querySelector('.check').addEventListener('click', function () {
 });
 
 document.querySelector('.again').addEventListener('click', function () {
-  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  secretNumber = Math.trunc(Math.random() * 100) + 1;
   score = 20;
   updateScore(score);
   displayMessage('Start guessing...');
